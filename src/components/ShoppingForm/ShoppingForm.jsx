@@ -11,7 +11,7 @@ function ShoppingForm(props) {
     const handleSubmit = (evt) => {
 
         // prevent page load
-        event.preventDefault();
+        evt.preventDefault();
 
         // make obj.
         const shoppingListItem = {
