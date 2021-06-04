@@ -1,11 +1,11 @@
 
-function ShoppingItem({item}){
+function ShoppingItem({list}){
 return(
     <>
 
         <div>
-            <p>{item.name}</p> 
-            <p>{item.quantity} {item.unit}</p>
+            <p>{list.name}</p> 
+            <p>{list.quantity} {list.unit}</p>
             <button>Buy</button>
             <button>Remove</button>
         </div>
