@@ -1,6 +1,5 @@
-import ShoppingItem from "../ShoppingItem/ShoppingItem"
-import {Button} from 'react-bootstrap/Button';
-function ShoppingList ({list}){
+import ShoppingItem from "../ShoppingItem/ShoppingItem";
+function ShoppingList ({list, getItems}){
     
     
     return (
@@ -10,7 +9,7 @@ function ShoppingList ({list}){
             <button type = "button" className = "btn btn-danger" id = "clearBtn">Clear</button>
             <div>
                 {list.map(list => (
-                    <ShoppingItem key={list.id} list={list} />
+                    <ShoppingItem key={list.id} list={list} getItems={getItems}/>
                 ))}
             </div>
         </>
