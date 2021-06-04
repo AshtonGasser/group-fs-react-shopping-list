@@ -10,7 +10,7 @@ const pool = require('../modules/pool.js');
 router.get('/', (req, res) => {
 
     // queryText grabs our table data and organizes it aphabetically by the "name" vals
-    let queryText = `SELECT * FROM shopping_carts ORDER BY "name" ASC;`;
+    let queryText = `SELECT * FROM shopping_cart ORDER BY "name" ASC;`;
     // need to tell the database what data we want to retrieve
     pool.query(queryText)
     .then( result => {
