@@ -27,7 +27,19 @@ router.get('/', (req, res) => {
 })
 
 // POST⬇
+router.post('/', (req, res) => {
+    const newItem = req.body
+    const sqlText = `INSERT INTO shopping_cart (name, quantity, unit) VALUES ($1, $2, $3);`;
 
+    pool.query(sqlText, [newItem.name, newItem.quantity, newItem.unit])
+        .then ((result ) => {
+            res.sendStatus(201);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${error}`);
+        res.sendStatus(500);
+    });
+})
 
 
 
