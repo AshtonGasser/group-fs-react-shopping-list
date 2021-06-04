@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import Header from '../Header/Header.jsx'
 import './App.css';
+import ShoppingForm from '../ShoppingForm/ShoppingForm'
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
     return (
         <div className="App">
             <Header />
+            <ShoppingForm addItem={addItem} />
             <main>
                 <p>Under Construction...</p>
             </main>
