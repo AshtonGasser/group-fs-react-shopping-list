@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from '../Header/Header.jsx'
 import ShoppingList from '../ShoppingList/ShoppingList'
 import './App.css';
+import Button from 'react-bootstrap/Button'
 import ShoppingForm from '../ShoppingForm/ShoppingForm'
 
 
@@ -61,7 +62,10 @@ function App() {
             <Header />
             <ShoppingForm addItem={addItem} />
             <main>
-                <ShoppingList list={shoppingList} deleteItem={deleteItem} />
+
+                <p>Under Construction...</p>
+                <ShoppingList list={shoppingList} getItems={getItems} deleteItem={deleteItem} />
+
             </main>
         </div>
     );
