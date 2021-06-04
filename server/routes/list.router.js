@@ -48,7 +48,7 @@ router.put('/:id', (req, res) => {
     const sqlText = `UPDATE "shopping_cart" SET "purchased" = $1 WHERE "id" = $2;`
 
     const values = [req.body.purchased, req.params.id]
-    pool.query(sqlText, values).then(res => {
+    pool.query(sqlText, values).then(result => {
         res.sendStatus(200)
     }).catch(err => {
         console.log(`We got an error... ${err}`)
