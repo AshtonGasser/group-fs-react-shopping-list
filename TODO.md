@@ -1,6 +1,6 @@
 [ ] DATABASE
     - [] DATA MODEL
-        shopping-cart = {
+        shopping_cart = {
             id: PRIMARY SERIAL KEY,
             name: VARCHAR(80),
             quantity: INT,
