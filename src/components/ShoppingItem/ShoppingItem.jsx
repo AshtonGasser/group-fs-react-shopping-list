@@ -1,7 +1,8 @@
 import {useState} from 'react'
 import axios from 'axios'
 
-function ShoppingItem({list, getItems}){
+
+function ShoppingItem({list, getItems, deleteItem}){
 
     const [isHidden, setIsHidden] = useState(false)
 
@@ -19,6 +20,9 @@ function ShoppingItem({list, getItems}){
             console.log(`Log the ${error}`)
         })
     }
+    const removeItem = () => {
+        deleteItem(list.id);
+    }
 return(
     <>
 
@@ -35,7 +39,8 @@ return(
             </div>
         )}
             <button onClick={handleBuy}>Buy</button>
-            <button>Remove</button>
+             <button onClick={removeItem} >Remove</button>
+
         </div>
 
     </>

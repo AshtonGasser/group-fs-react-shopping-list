@@ -42,6 +42,17 @@ function App() {
          })
     }
 
+    const deleteItem = (key) => {
+
+        axios.delete(`/list/${key}`)
+        .then( response => {
+            console.log("Item was deleted. Server responded with:", response);
+            getItems();
+        }).catch ( err => {
+            console.log('There was a problem with deleting the item', err);
+        });
+    }
+
     useEffect(() => {
         getItems()
     }, [])
@@ -51,8 +62,10 @@ function App() {
             <Header />
             <ShoppingForm addItem={addItem} />
             <main>
+
                 <p>Under Construction...</p>
-                <ShoppingList list={shoppingList} getItems={getItems}/>
+                <ShoppingList list={shoppingList} getItems={getItems} deleteItem={deleteItem} />
+
             </main>
         </div>
     );

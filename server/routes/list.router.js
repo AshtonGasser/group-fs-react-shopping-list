@@ -58,5 +58,19 @@ router.put('/:id', (req, res) => {
 
 
 // DELETE⬇
+router.delete('/:id', (req, res) => {
+    const itemToDelete = req.params.id
+    const queryString = `DELETE FROM shopping_cart WHERE "id" = $1;`;
+
+    pool.query(queryString, [itemToDelete])
+        .then(result => {
+            console.log(result);
+            res.sendStatus(201);
+        })
+        .catch(error => {
+            console.log(`Error in delete ${error}`);
+            res.sendStatus(500);
+        })
+})
 
 module.exports = router;
