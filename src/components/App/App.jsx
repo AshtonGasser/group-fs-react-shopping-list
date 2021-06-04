@@ -5,7 +5,7 @@ import './App.css';
 
 
 function App() {
-    
+
     // create a function that will GET the data from the server
     const getItems = () => {
     // use axios to contact the server and specify what route you want to receive data from 
@@ -26,7 +26,10 @@ function App() {
     const addItem = (newItem) => {
         console.log(newItem);
          // ⬇ POST your data here
-         axios.post(".list", newItem)
+
+         axios.post("/list", newItem)
+
+
          .then(response => {
              console.log('response', response);
              // get function here ***
@@ -34,7 +37,7 @@ function App() {
              console.log(error)
          })
     }
-    
+
     return (
         <div className="App">
             <Header />
